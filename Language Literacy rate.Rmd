@@ -1,0 +1,44 @@
+---
+title: "Himalay Cherukuri FML"
+output: html_document
+date: "2024-02-04"
+---
+```{r}
+library(readr)
+Language <- read.csv("C:/Users/himal/OneDrive/Desktop/Language Literacy rate.csv")
+View(Language)
+```
+```{r}
+str(Language)
+```
+```{r}
+dim(Language)
+```
+```{r}
+summary(Language)
+```
+
+
+```{r}
+my_data <- data.frame(
+  Language = c("Assamese", "Bengali", "Gujrati", "Hindi", "Kannada", "Kashmiri", 
+               "Konkani", "Maithili", "Malayalam", "Marathi", "Odia", "Punjabi", 
+               "Sanskrit", "Sindhi", "Tamil", "Telugu", "Urdu", "Mandrin", "English", 
+               "Spanish", "German", "French", "Arabic", "Russian", "Portuguese", 
+               "Japanese", "Italian", "Korean"),
+  Speaking.Result = c(8, 9, 9, 10, 10, 8, 8, 8, 10, 10, 9, 9, 10, 9, 10, 10, 9, 8, 10, 10, 10, 10, 8, 9, 9, 10, 10, 8)
+)
+ 
+```
+```{r}
+barplot(my_data$Speaking.Result, 
+        names.arg = my_data$Language,
+        xlab = "Languages", ylab = "Speaking Result",
+        main = "Speaking Results",
+        col = "skyblue",  # Color of bars
+        las = 2,          # Rotate x-axis labels vertically
+        cex.names = 0.7,  # Adjust the size of x-axis labels
+        ylim = c(0, max(my_data$Speaking.Result) + 1)  # Adjust y-axis limits
+)
+```
+
